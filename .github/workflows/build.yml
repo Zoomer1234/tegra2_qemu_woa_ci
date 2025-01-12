@@ -83,10 +83,9 @@ jobs:
           zstd:p
           libslirp:p
 
-    - name: Ensure pip is installed
+    - name: Install pip
       run: |
-        curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-        python3 get-pip.py
+        pacman -S --noconfirm mingw-w64-x86_64-python-pip
         python3 -m pip --version
 
     - name: Verify Python and setuptools
