@@ -85,8 +85,14 @@ jobs:
 
     - name: Ensure pip is installed
       run: |
-        python3 -m ensurepip --default-pip
+        curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+        python3 get-pip.py
         python3 -m pip --version
+
+    - name: Verify Python and setuptools
+      run: |
+        python3 --version
+        python3 -m pip show setuptools || python3 -m pip install setuptools
 
     - name: 'Modify pkgconfig to avoid linker issues'
       if: ${{ matrix.mode == 'static' }}
