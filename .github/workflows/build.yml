@@ -84,7 +84,7 @@ jobs:
 
     - name: Install gcc
       run: |
-        pacman -U https://repo.msys2.org/msys/x86_64/mingw-w64-cross-mingw64-gcc-14.2.0-3-x86_64.pkg.tar.zst
+        yes | pacman -U https://repo.msys2.org/msys/x86_64/mingw-w64-cross-mingw64-gcc-14.2.0-3-x86_64.pkg.tar.zst
 
     - name: Install pip
       run: |
